@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import pro.enikeev.imitation.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import pro.enikeev.imitation.FloatTextField?>
+<?import pro.enikeev.imitation.IntegerTextField?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="573.0" prefWidth="856.0" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pro.enikeev.imitation.JFXImitationController">
+  <tabs>
+    <Tab text="General">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <SplitPane dividerPositions="0.26855123674911663" layoutY="3.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                           <children>
+                              <VBox alignment="TOP_CENTER" layoutX="14.0" layoutY="14.0" spacing="14.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                 <children>
+                                    <VBox layoutX="14.0" layoutY="14.0" prefHeight="100.0" prefWidth="149.0" spacing="10.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                       <children>
+                                          <HBox alignment="CENTER" layoutX="14.0" layoutY="14.0" prefHeight="25.0" prefWidth="154.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                             <children>
+                                                <Label layoutX="14.0" layoutY="18.0" prefHeight="25.0" prefWidth="60.0" text="N:" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="18.0" />
+                                                <IntegerTextField fx:id="textFieldN" alignment="CENTER_RIGHT" layoutX="57.0" layoutY="14.0" text="1000" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" layoutX="14.0" layoutY="48.0" prefHeight="25.0" prefWidth="154.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0">
+                                             <children>
+                                                <Label layoutX="14.0" layoutY="18.0" prefHeight="25.0" prefWidth="60.0" text="t_Start:" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="18.0" />
+                                                <FloatTextField fx:id="textFieldTStart" alignment="CENTER_RIGHT" layoutX="57.0" layoutY="14.0" text="0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" layoutX="14.0" layoutY="80.0" prefHeight="25.0" prefWidth="148.0">
+                                             <children>
+                                                <Label layoutX="14.0" layoutY="18.0" prefHeight="25.0" prefWidth="60.0" text="t_End:" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="18.0" />
+                                                <FloatTextField fx:id="textFieldEnd" alignment="CENTER_RIGHT" layoutX="57.0" layoutY="14.0" text="30" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0" />
+                                             </children>
+                                          </HBox>
+                                          <HBox alignment="CENTER" layoutX="14.0" layoutY="113.0" prefHeight="25.0" prefWidth="148.0">
+                                             <children>
+                                                <Label layoutX="14.0" layoutY="18.0" prefHeight="25.0" prefWidth="60.0" text="t_Step:" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="18.0" />
+                                                <FloatTextField fx:id="textFieldStep" alignment="CENTER_RIGHT" layoutX="57.0" layoutY="14.0" text="1" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0" />
+                                             </children>
+                                          </HBox>
+                                       </children>
+                                    </VBox>
+                                    <VBox alignment="CENTER" layoutX="14.0" layoutY="170.0">
+                                       <children>
+                                          <Label layoutX="14.0" layoutY="170.0" text="System reliability mean time:">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <Label fx:id="labelMeanTime" layoutX="14.0" layoutY="187.0" text="Unknown" textAlignment="CENTER" />
+                                       </children>
+                                       <opaqueInsets>
+                                          <Insets />
+                                       </opaqueInsets>
+                                    </VBox>
+                                    <VBox alignment="CENTER" layoutX="16.0" layoutY="216.0">
+                                       <children>
+                                          <Label layoutX="14.0" layoutY="170.0" text="System reliability probability:">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <HBox alignment="CENTER">
+                                             <children>
+                                                <Label prefHeight="25.0" prefWidth="60.0" text="Till t:" />
+                                                <FloatTextField fx:id="textFieldReliabilityTill" alignment="CENTER_RIGHT" text="10" />
+                                             </children>
+                                          </HBox>
+                                          <Label fx:id="labelReliableTillProbability" layoutX="14.0" layoutY="187.0" text="Unknown" textAlignment="CENTER" />
+                                       </children>
+                                    </VBox>
+                                    <HBox alignment="CENTER" layoutX="14.0" layoutY="591.0">
+                                       <children>
+                                          <Button layoutX="14.0" layoutY="591.0" mnemonicParsing="false" onMouseClicked="#buttonSmirnovOnMouseClicked" prefHeight="25.0" prefWidth="66.0" text="Smirnov">
+                                             <HBox.margin>
+                                                <Insets left="14.0" right="14.0" />
+                                             </HBox.margin></Button>
+                                          <Button mnemonicParsing="false" onMouseClicked="#buttonSampleOnMouseClicked" text="Sample">
+                                             <HBox.margin>
+                                                <Insets left="14.0" right="14.0" />
+                                             </HBox.margin>
+                                          </Button>
+                                       </children>
+                                    </HBox>
+                                    <Button mnemonicParsing="false" onMouseClicked="#buttonClearOnMouseClicked" text="Clear" />
+                                    <VBox alignment="CENTER" prefHeight="33.0" prefWidth="198.0">
+                                       <children>
+                                          <Label text="Curve fit coefficients:">
+                                             <font>
+                                                <Font size="13.0" />
+                                             </font>
+                                          </Label>
+                                          <HBox alignment="CENTER" prefHeight="25.0" prefWidth="154.0">
+                                             <children>
+                                                <Label layoutX="14.0" layoutY="18.0" prefHeight="25.0" prefWidth="60.0" text="Degree:" AnchorPane.leftAnchor="14.0" AnchorPane.topAnchor="18.0" />
+                                                <IntegerTextField fx:id="textFieldCurveFitDegree" alignment="CENTER_RIGHT" layoutX="57.0" layoutY="14.0" text="3" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0" />
+                                             </children>
+                                          </HBox>
+                                          <Label fx:id="labelCurveFitCoefficients" text="Unknown" />
+                                       </children>
+                                    </VBox>
+                                    <Button mnemonicParsing="false" onMouseClicked="#buttonDrawCurveOnMouseClicked" text="Draw curve" />
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="358.0" prefWidth="561.0">
+                           <children>
+                              <LineChart fx:id="chartSystem" createSymbols="false" layoutX="11.0" layoutY="14.0" prefHeight="341.0" prefWidth="392.0" title="System reliability probability density function" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                                <xAxis>
+                                  <NumberAxis side="BOTTOM" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" />
+                                </yAxis>
+                              </LineChart>
+                           </children>
+                        </AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+    <Tab text="Blocks">
+      <content>
+        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <GridPane alignment="CENTER" gridLinesVisible="true" layoutX="14.0" layoutY="14.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <LineChart fx:id="chartUnit1" createSymbols="false" title="1">
+                          <xAxis>
+                            <NumberAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <LineChart fx:id="chartUnit2" createSymbols="false" title="2" GridPane.columnIndex="1">
+                          <xAxis>
+                            <NumberAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <LineChart fx:id="chartUnit3" createSymbols="false" title="3" GridPane.columnIndex="2">
+                          <xAxis>
+                            <NumberAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <LineChart fx:id="chartUnit4" createSymbols="false" title="4" GridPane.rowIndex="1">
+                          <xAxis>
+                            <NumberAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <LineChart fx:id="chartUnit5" createSymbols="false" title="5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                          <xAxis>
+                            <NumberAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <LineChart fx:id="chartUnit6" createSymbols="false" title="6" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                          <xAxis>
+                            <NumberAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <LineChart fx:id="chartUnit7" createSymbols="false" title="7" GridPane.rowIndex="2">
+                          <xAxis>
+                            <NumberAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <LineChart fx:id="chartSystemSmall" createSymbols="false" title="System" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                          <xAxis>
+                            <NumberAxis side="BOTTOM" />
+                          </xAxis>
+                          <yAxis>
+                            <NumberAxis side="LEFT" />
+                          </yAxis>
+                        </LineChart>
+                        <Pane fx:id="paneImageViewInGrid" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <children>
+                              <ImageView fx:id="imageViewScheme" fitHeight="181.0" fitWidth="265.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                                 <image>
+                                    <Image url="@../images/scheme.png" />
+                                 </image>
+                              </ImageView>
+                           </children>
+                        </Pane>
+                     </children>
+                  </GridPane>
+               </children></AnchorPane>
+      </content>
+    </Tab>
+  </tabs>
+</TabPane>
