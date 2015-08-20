@@ -7,6 +7,8 @@ import pro.enikeev.imitation.factory.VariantFactory;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * @author Rinat Enikeev
@@ -18,7 +20,8 @@ public class ExcelExportTest extends TestCase {
     public void testExcelExport() throws IOException {
         VariantFactory variantFactory = new VariantFactory();
         Scheme scheme = variantFactory.variant16();
-        Path path = Paths.get(System.getProperty("user.home"), "Desktop", "imitationTestResult.xls");
+        SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd-hh-mm-ss");
+        Path path = Paths.get(System.getProperty("user.home"), "Desktop", "imitationTestResult" + f.format(new Date()) + ".xls");
         Exporter exporter = new ExcelExporter.Builder().setIterationsPerT(1000).settStart(0).settStep(0.5).settEnd(30).setFitDegree(3).build();
         exporter.export(scheme, path);
     }
