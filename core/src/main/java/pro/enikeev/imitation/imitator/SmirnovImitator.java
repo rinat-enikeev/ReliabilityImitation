@@ -22,7 +22,7 @@ public class SmirnovImitator extends AbstractImitator implements Imitator {
 
     public UnivariateIntegrator integrator = new IterativeLegendreGaussIntegrator(30, 0.01, 0.01);
     public int integratorMaxEval = 1000;
-    public RandomGenerator random = new JDKRandomGenerator(); // fixme to {@code 1.0d} (exclusive)
+    public RandomGenerator random = new JDKRandomGenerator();
 
     public SmirnovImitator(Integer N, double tStart, double tEnd, double tStep)
             throws NumberIsTooLargeException, NullArgumentException, ZeroException, NotPositiveException {

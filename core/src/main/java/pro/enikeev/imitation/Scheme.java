@@ -7,11 +7,11 @@ import java.util.*;
  * @since 0.1
  */
 public class Scheme {
-    private LinkedHashSet<Unit> units;
+    private List<Unit> units;
     private Set<Set<Unit>> failureUnitCombo;
 
     public Scheme(Unit... units) {
-        this.units = new LinkedHashSet<Unit>(Arrays.asList(units));
+        this.units = Arrays.asList(units);
         this.failureUnitCombo = new HashSet<Set<Unit>>();
     }
 
@@ -20,7 +20,7 @@ public class Scheme {
         failureUnitCombo.add(failureUnits);
     }
 
-    public Set<Unit> getUnits() {
+    public List<Unit> getUnits() {
         return units;
     }
 

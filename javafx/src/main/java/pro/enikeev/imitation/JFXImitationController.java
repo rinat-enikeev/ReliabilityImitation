@@ -100,7 +100,7 @@ public class JFXImitationController implements Initializable {
         Float tStep = textFieldStep.getValue();
         Imitator imitator = new SmirnovImitator(textFieldN.getValue(), tStart, tEnd, tStep);
         UnivariateFunction reliability = imitator.reliability(scheme);
-        drawSystemFunction(reliability, tStart, tEnd, tStep);
+        drawSystemFunction(reliability);
 
         updateCalculatedValues(reliability);
     }
@@ -113,7 +113,7 @@ public class JFXImitationController implements Initializable {
 
         Imitator imitator = new SampleImitator(textFieldN.getValue(), tStart, tEnd, tStep);
         UnivariateFunction reliability = imitator.reliability(scheme);
-        drawSystemFunction(reliability, tStart, tEnd, tStep);
+        drawSystemFunction(reliability);
 
         updateCalculatedValues(reliability);
     }
@@ -168,17 +168,23 @@ public class JFXImitationController implements Initializable {
 
         curveCoefficients = analyzer.fit(reliability, textFieldCurveFitDegree.getValue(), tStart, tEnd, tStep);
 
-        DecimalFormat df = new DecimalFormat("0.00", DecimalFormatSymbols.getInstance(Locale.ENGLISH));
+        DecimalFormat df = new DecimalFormat("0.0000", DecimalFormatSymbols.getInstance(Locale.ENGLISH));
         String result = "";
         for (int i = 0; i < curveCoefficients.length - 1; i++) {
             result += df.format(curveCoefficients[i]) + "; ";
+            System.out.println(curveCoefficients[i]);
         }
         result += df.format(curveCoefficients[curveCoefficients.length - 1]);
+        System.out.println(curveCoefficients[curveCoefficients.length - 1]);
 
         labelCurveFitCoefficients.setText(result);
     }
 
-    private void drawSystemFunction(UnivariateFunction reliability, double tStart, double tEnd, double tStep) {
+    private void drawSystemFunction(UnivariateFunction reliability) {
+        Float tStart = textFieldTStart.getValue();
+        Float tEnd = textFieldEnd.getValue();
+        Float tStep = textFieldStep.getValue();
+
         XYChart.Series mainSeries = new XYChart.Series();
         XYChart.Series smallSeries = new XYChart.Series();
         double t = tStart;
